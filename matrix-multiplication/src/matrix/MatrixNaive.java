@@ -1,3 +1,5 @@
+package matrix;
+
 public class MatrixNaive {
 
     private int size;
@@ -17,13 +19,18 @@ public class MatrixNaive {
         int[][] a = m1.getMatrix();
         int[][] b = m2.getMatrix();
 
-        int[][] c = new int[m1.size][m2.size];
 
-        for (int i = 0; i < m1.size; i++) {
-            for (int j = 0; j < m2.size; j++) {
+		if (m1.size != m2.size)
+			throw new IllegalArgumentException("Matrices need to be the same size");
+
+    	int N = m1.size;
+        int[][] c = new int[N][N];
+
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
                 c[i][j] = 0;
 
-                for (int k = 0; k < m1.size; k++) {
+                for (int k = 0; k < N; k++) {
                     c[i][j] += a[i][k] * b[k][j];
                 }
             }

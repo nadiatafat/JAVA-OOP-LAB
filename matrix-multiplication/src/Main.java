@@ -1,17 +1,40 @@
+import matrix.MatrixNaive;
+import matrix.MatrixOptimized;
+import utils.Utils;
+
 public class Main {
     public static void main(String[] args) {
+        try {
+            int size = 3;
 
-        int size = 3;
-        MatrixNaive m1 = new MatrixNaive(size);
-        MatrixNaive m2 = new MatrixNaive(size);
+            // Test MatrixNaive
+            MatrixNaive mn1 = new MatrixNaive(size);
+            MatrixNaive mn2 = new MatrixNaive(size);
 
-        Utils.fillTestValues(m1);
-        Utils.fillTestValues(m2);
+            Utils.fillTestValuesNaive(mn1);
+            Utils.fillTestValuesNaive(mn2);
 
-        int[][] result = m1.multiply(m1, m2);
+            int[][] resultNaive = mn1.multiply(mn1, mn2);
 
-        Utils.printMatrix("Matrice 1", m1.getMatrix());
-        Utils.printMatrix("Matrice 2", m2.getMatrix());
-        Utils.printMatrix("Résultat", result);
+            Utils.printMatrixNaive("Naive Matrice 1", mn1.getMatrix());
+            Utils.printMatrixNaive("Naive Matrice 2", mn2.getMatrix());
+            Utils.printMatrixNaive("Naive Résultat", resultNaive);
+
+            // Test MatrixOptimized
+            MatrixOptimized mo1 = new MatrixOptimized(size);
+            MatrixOptimized mo2 = new MatrixOptimized(size);
+
+            Utils.fillTestValuesOptimized(mo1);
+            Utils.fillTestValuesOptimized(mo2);
+
+            int[] resultOptimized = mo1.multiply(mo1, mo2);
+
+            Utils.printMatrixOptimized("Optimized Matrice 1", mo1.getMatrix(), size);
+            Utils.printMatrixOptimized("Optimized Matrice 2", mo2.getMatrix(), size);
+            Utils.printMatrixOptimized("Optimized Résultat", resultOptimized, size);
+
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage() + "\n");
+        }
     }
 }
