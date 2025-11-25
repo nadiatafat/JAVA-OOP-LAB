@@ -1,32 +1,3 @@
-Voici une **explication claire + un README** parfaitement adapté à la consigne de ton prof, dans un style **étudiant 42 sérieux + ingénieur en devenir**.
-
----
-
-# 🔥 **Explication pour toi (avant le README)**
-
-Ton prof veut que tu comprennes **pourquoi l’approche mathématique “idéale” ne suffit pas** et pourquoi **le hardware impose sa propre réalité**.
-
-### 🎯 Le problème mathématique
-
-La multiplication matricielle est simple :
-Pour chaque entrée `C[i][j]` :
-[
-C[i][j] = \sum_{k=0}^{N-1} A[i][k] \times B[k][j]
-]
-
-Trois boucles. Évident.
-**Mais math ≠ hardware.**
-
----
-
-# 🧠 **Pourquoi l’implémentation naïve est catastrophique ? (les cache misses)**
-
-En Java (et dans la plupart des langages), `double[][]` = **tableau de tableaux**.
-Donc :
-
-* chaque ligne est stockée **dans un bloc mémoire à part**
-* les lignes ne sont **pas contiguës**
-* le CPU lit la mémoire par blocs (cache lines)
 # MATRIX-MULTIPLICATION — Java OOP & Cache Locality
 
 Ce module a pour objectif d’implémenter et d’optimiser la multiplication de deux matrices carrées `A` et `B` de taille `N × N` (ex : 2048).
@@ -34,7 +5,7 @@ Le but est de comprendre la différence entre **la théorie mathématique** et *
 
 ---
 
-## 🎯 Objectifs du module
+## Objectifs du module
 
 * Implémenter la multiplication matricielle classique.
 * Observer les limites de l’implémentation naïve (trois boucles `for`).
@@ -45,7 +16,7 @@ Le but est de comprendre la différence entre **la théorie mathématique** et *
 
 ---
 
-## 🧠 Pourquoi l’implémentation naïve est lente
+## Pourquoi l’implémentation naïve est lente
 
 En Java, un tableau `double[][]` est un **tableau de tableaux**, ce qui signifie :
 
@@ -58,7 +29,7 @@ Pour une matrice de taille 2048, la différence de performance devient massive.
 
 ---
 
-## 🚀 Optimisations explorées
+## Optimisations explorées
 
 ### ✔️ 1. Changement de l’ordre des boucles
 
@@ -95,7 +66,7 @@ Avantages :
 
 ---
 
-## 📊 Benchmark
+## Benchmark
 
 Les tests comparent :
 
