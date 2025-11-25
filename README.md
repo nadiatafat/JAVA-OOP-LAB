@@ -1,4 +1,4 @@
-# JAVA-OOP-ALGO-LAB
+# JAVA-OOP-LAB
 
 Ce dépôt regroupe une série de petits projets réalisés dans le cadre de mon apprentissage de la **programmation orientée objet en Java**.
 L’idée : **approfondir les bases du langage** et les appliquer à des sujets concrets issus des maths et de l’algorithmique.
